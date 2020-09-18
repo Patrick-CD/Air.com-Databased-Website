@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- saved from url=(0094)file:///D:/%E6%A1%8C%E9%9D%A2/databases/project/project_1/Flask_for_class/templates/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+</head>
+
+<body>
+{% if not message %}
+	<a href="file:///D:/login">Login</a>
+	<a href="file:///D:/register">Register</a>
+{% endif %}
+
+{% if message %}
+	<a href="file:///D:/logout">Logout</a>
+	<a href="file:///D:/remove_account">Remove Account</a>
+	<p class="message">You are logged in {{message}}. You have {{num}} follower(s)</p> <br>
+	<a href="file:///D:/tweets">View your tweets</a> <br>
+	<a href="file:///D:/find_people">Find people to follow</a> <br>
+	<a href="file:///D:/unfollow">Unfollow someone</a> <br>
+	<a href="file:///D:/view_followed">View people you have followed</a> <br>
+	<br>
+
+        <h4>15 most recent tweets from you and your followers </h4> <br>
+
+	{% for line in tweets%}
+	        <p>{{line}}</p>
+	        <hr>
+	{% endfor %}
+	{% endif %}
+
+
+
+</body></html>

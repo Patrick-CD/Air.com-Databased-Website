@@ -1,0 +1,112 @@
+<html>
+<head>
+</head>
+<body>
+	<h1>Welcome {{username}}</h1>
+
+
+<style type="text/css">
+	table, th, td{
+		border: 1px solid black;
+	}
+</style>
+
+<table>
+	<th>most_booking_agent_last_year</th>
+	
+
+{% for line in ba %}
+	<tr>
+		<td>{{line['booking_agent_id']}}</td>
+	</tr>
+{% endfor %}
+</table>
+
+</br>
+<table>
+	<th>most_booking_agent_last_month</th>
+	
+
+{% for line in ba1 %}
+	<tr>
+		<td>{{line['booking_agent_id']}}</td>
+	</tr>
+{% endfor %}
+</table>
+
+</br>
+<table>
+	<th>most_booking_agent_last_year_based_on_commission</th>
+	
+
+{% for line in ba2 %}
+	<tr>
+		<td>{{line['booking_agent_id']}}</td>
+	</tr>
+{% endfor %}
+</table>
+
+</br>
+<table>
+	<th>most_frequent_customer</th>
+	
+
+{% for line in cus %}
+	<tr>
+		<td>{{line['customer_email']}}</td>
+	</tr>
+{% endfor %}
+</table>
+
+</br>
+<form action="/staff_see_cus" method="POST">
+	<input type="text" name = "customer_email" placeholder="customer_email" required/> </br>
+	<input type="submit" value = see_record_of_this_customer />
+</form>
+
+</br>
+<table>
+	<th>cus_email</th>
+	<th>flight_list</th>
+	
+
+{% for line in lis %}
+	<tr>
+		<td>{{line['customer_email']}}</td>
+		<td>{{line['flight_num']}}</td>
+	</tr>
+{% endfor %}
+</table>
+
+</br>
+<table>
+	<th>most_destination_year</th>	
+
+{% for line in destination %}
+	<tr>
+		<td>{{line['airport_city']}}</td>
+	</tr>
+{% endfor %}
+</table>
+
+</br>
+<table>
+	<th>most_destination_month</th>	
+
+{% for line in destination1 %}
+	<tr>
+		<td>{{line['airport_city']}}</td>
+	</tr>
+{% endfor %}
+</table>
+
+
+</br>
+<form action="/staffback" method="POST">	
+	<input type="submit" value = Back />
+</form>
+
+</body>
+
+
+</html>

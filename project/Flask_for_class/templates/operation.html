@@ -1,0 +1,121 @@
+<html>
+<head>
+</head>
+<body>
+	<h1>Welcome {{username}}</h1>
+
+
+<style type="text/css">
+	table, th, td{
+		border: 1px solid black;
+	}
+</style>
+
+<table>
+	<th>flight</th>
+	<th>status</th>
+	<th>airline</th>
+	<th>departure_airport</th>
+	<th>departure_time</th>
+	<th>arrival_airport</th>
+	<th>arrival_time</th>
+	
+
+{% for line in posts %}
+	<tr>
+		<td>{{line['flight_num']}}</td>
+		<td>{{line['status']}}</td>
+		<td>{{line['airline_name']}}</td>
+		<td>{{line['departure_airport']}}</td>
+		<td>{{line['departure_time']}}</td>
+		<td>{{line['arrival_airport']}}</td>
+		<td>{{line['arrival_time']}}</td>
+	</tr>
+{% endfor %}
+</table>
+
+<h1>{{error}}</h1>
+</br>
+<form action="/update_status" method="POST">
+	<input type="text" name = "flight" placeholder="flight_number" required/> </br>
+	<input type="text" name = "status" placeholder="status" required/> </br>
+	<input type="submit" value = update_flight_status />
+</form>
+
+
+
+<h1>{{error2}}</h1>
+</br>
+<table>
+	<th>plane_id</th>
+	<th>seats</th>
+	
+{% for line in airplane %}
+	<tr>
+		<td>{{line['airplane_id']}}</td>
+		<td>{{line['seats']}}</td>
+	</tr>
+{% endfor %}
+</table>
+
+
+</br>
+<form action="/add_flight" method="POST">
+	<input type="text" name = "flight_num" placeholder="flight_num" /> </br>
+	<input type="text" name = "departure_time" placeholder="departure_time" /> </br>
+	<input type="text" name = "departure_airport" placeholder="departure_airport" /> </br>
+	<input type="text" name = "arrival_time" placeholder="arrival_time" /> </br>
+	<input type="text" name = "arrival_airport" placeholder="arrival_airport" /> </br>
+	<input type="text" name = "airplane_id" placeholder="airplane_id" /> </br>
+	<input type="text" name = "price" placeholder="price" /> </br>
+	<input type="text" name = "status" placeholder="status" /> </br>
+	<input type="submit" value = add_flight />
+</form>
+
+</br>
+<form action="/add_ticket" method="POST">
+	<input type="text" name = "flight_num" placeholder="flight_num" /> </br>
+	<input type="text" name = "ticket_id" placeholder="ticket_id" /> </br>
+	<input type="submit" value = add_ticket />
+</form>
+
+
+</br>
+<form action="/add_airplane" method="POST">
+	<input type="text" name = "airplane_id" placeholder="id" required/> </br>
+	<input type="text" name = "seats" placeholder="seats" required/> </br>
+	<input type="submit" value = add_airplane />
+</form>
+
+
+
+
+<h1>{{error2}}</h1>
+<table>
+	<th>city</th>
+	<th>airport</th>
+
+{% for line in airport %}
+	<tr>
+		<td>{{line['airport_city']}}</td>
+		<td>{{line['airport_name']}}</td>
+	</tr>
+{% endfor %}
+</table>
+
+</br>
+<form action="/add_airport" method="POST">
+	<input type="text" name = "airport_city" placeholder="airport_city" required/> </br>
+	<input type="text" name = "airport_name" placeholder="airport_name" required/> </br>
+	<input type="submit" value = add_airport />
+</form>
+
+</br>
+<form action="/staffback" method="POST">	
+	<input type="submit" value = Back />
+</form>
+
+</body>
+
+
+</html>

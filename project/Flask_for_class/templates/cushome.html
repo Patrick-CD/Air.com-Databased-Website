@@ -1,0 +1,506 @@
+<html>
+<head>
+</head>
+<body>
+	<center><h1>Welcome {{email}}</h1></center>
+	{% if away %}
+		<center><h1>{{away}} more purchases to be super vip</h1></center>
+	{% endif %}
+
+<style type="text/css">
+	.login {
+	width: 32%;
+	margin: 0 auto;
+	}
+	.login h2 {
+	font-size: 30px;
+	font-weight: 700;
+	color: #fff;
+	text-align: center;
+	margin: 0px 0px 50px 0px;
+	font-family: 'Droid Serif', serif;
+	}
+	.login-top {
+	background: #E1E1E1;
+	border-radius: 25px 25px 0px 0px;
+	-webkit-border-radius:  25px 25px 0px 0px;
+	-moz-border-radius: 25px 25px 0px 0px;
+	-o-border-radius: 25px 25px 0px 0px;
+	padding: 40px 60px;
+	}
+	.login-top h1 {
+	text-align: center;
+	font-size: 27px;
+	font-weight: 500;
+	color: #F45B4B;
+	margin: 0px 0px 20px 0px;
+	}
+	.login-top input[type="text"] {
+		outline: none;
+	font-size: 15px;
+	font-weight: 500;
+	color: #818181;
+	padding: 15px 20px;
+	background: #CACACA;
+	border: 1px solid #ccc;
+	border-radius:25px;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	-o-border-radius: 25px;
+	margin: 0px 0px 12px 0px;
+	width: 88%;
+	-webkit-appearance: none;
+	}
+	.login-top input[type="password"]{
+		outline: none;
+	font-size: 15px;
+	font-weight: 500;
+	color: #818181;
+	padding: 15px 20px;
+	background: #CACACA;
+	border: 1px solid #ccc;
+	border-radius:25px;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	-o-border-radius: 25px;
+	margin: 0px 0px 12px 0px;
+	width: 88%;
+	-webkit-appearance: none;
+	}
+	.forgot  a{
+	font-size: 13px;
+	font-weight: 500;
+	color: #F45B4B;
+	display: inline-block;
+	border-right: 2px solid #F45B4B;
+	padding: 0px 7px 0px 0px;
+	}
+	.forgot  a:hover{
+	color: #818181;
+	}
+	.forgot input[type="submit"] {
+	background: #F45B4B;
+	color: #FFF;
+	font-size: 17px;
+	font-weight: 400;
+	padding: 8px 7px;
+	width: 70%;
+	display: inline-block;
+	cursor: pointer;
+	border-radius: 6px;
+	-webkit-border-radius: 19px;
+	-moz-border-radius: 6px;
+	-o-border-radius: 6px;
+	margin: 0px 20px 0px 3px;
+	outline: none;
+	border: none;
+	}
+	.forget  a{
+	background: #F45B4B;
+	text-align: center;
+	color: #FFF;
+	font-size: 17px;
+	font-weight: 400;
+	padding: 8px 7px;
+	width: 20%;
+	display: inline-block;
+	cursor: pointer;
+	border-radius: 6px;
+	-webkit-border-radius: 19px;
+	-moz-border-radius: 6px;
+	-o-border-radius: 6px;
+	margin: 0px 20px 0px 3px;
+	outline: none;
+	border: none;
+	}
+	.forget  a:hover{
+	color: #818181;
+	}
+	.forget input[type="submit"] {
+	background: #F45B4B;
+	color: #FFF;
+	font-size: 17px;
+	font-weight: 400;
+	padding: 8px 7px;
+	width: 20%;
+	display: inline-block;
+	cursor: pointer;
+	border-radius: 6px;
+	-webkit-border-radius: 19px;
+	-moz-border-radius: 6px;
+	-o-border-radius: 6px;
+	margin: 0px 20px 0px 3px;
+	outline: none;
+	border: none;
+	}
+	.forgot input[type="submit"]:hover {
+		background:#818181;
+		transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	}
+	.forgot {
+	text-align: right;
+	}
+	.login-bottom {
+	background: #E15748;
+	padding: 30px 65px;
+	border-radius: 0px 0px 25px 25px;
+	-webkit-border-radius:  0px 0px 25px 25px;
+	-moz-border-radius: 0px 0px 25px 25px;
+	-o-border-radius: 0px 0px 25px 25px;
+	text-align: right;
+	border-top: 2px solid #AD4337;
+	}
+	.login-bottom h3 {
+	font-size: 14px;
+	font-weight: 500;
+	color: #fff;
+	}
+	.login-bottom h3 a {
+	font-size: 25px;
+	font-weight: 500;
+	color: #fff;
+	}
+	.login-bottom h3 a:hover {
+		color:#696969;
+		transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	}
+	.copyright {
+	padding: 150px 0px 0px 0px;
+	text-align: center;
+	}
+	.copyright p {
+	font-size: 15px;
+	font-weight: 400;
+	color: #fff;
+	}
+	.copyright p a{
+	font-size: 15px;
+	font-weight: 400;
+	color: #E15748;
+	}
+	.copyright p a:hover{
+		color: #fff;
+		transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	}
+	/*--login end here--*/
+	/*--meadia quiries start here--*/
+	@media(max-width:1440px){
+	.login {
+	width: 35%;
+	}
+	}
+	@media(max-width:1366px){
+	.login {
+	width: 37%;
+	}
+	}
+	@media(max-width:1280px){
+	.login {
+	width: 40%;
+	}
+	}
+	@media(max-width:1024px){
+	.login {
+	width: 48%;
+	}
+	.copyright {
+	padding: 100px 0px 0px 0px;
+	}
+	}
+	@media(max-width:768px){
+	.login {
+	width: 65%;
+	}
+	.login-top h1 {
+	font-size: 25px;
+	}
+	.login-bottom h3 a {
+	font-size: 22px;
+	}
+	.copyright {
+	padding: 250px 0px 0px 0px;
+	}
+	body {
+	padding: 100px 0px 0px 0px;
+	}
+	.login h2 {
+	font-size: 28px;
+	}
+	}
+	@media(max-width:640px){
+	.login-top h1 {
+	font-size: 23px;
+	}
+	.forgot input[type="submit"] {
+	font-size: 15px;
+	width: 22%;
+	}
+	.login-top input[type="text"] {
+	padding: 12px 20px;
+	}
+	.login-top input[type="password"] {
+	padding: 12px 20px;
+	}
+	.login-bottom h3 a {
+	font-size: 19px;
+	}
+	.login-bottom h3 {
+	font-size: 13px;
+	}
+	.copyright {
+	padding: 110px 0px 0px 0px;
+	}
+	body {
+	padding: 110px 0px 0px 0px;
+	}
+	}
+	@media(max-width:480px){
+	.login {
+	width: 80%;
+	}
+	.login-top h1 {
+	font-size: 21px;
+	}
+	.login-top input[type="text"] {
+	width: 85%;
+	}
+	.login-top {
+	padding: 30px 40px;
+	}
+	.login-top input[type="password"] {
+	width: 85%;
+	}
+	.login h2 {
+	font-size: 25px;
+	}
+	}
+	@media(max-width:320px){
+	.login {
+	width: 90%;
+	}
+	.login-top {
+	padding: 20px 25px;
+	}
+	.login-top input[type="text"] {
+	width: 81%;
+	padding: 10px 20px;
+	font-size: 13px;
+	margin: 0px 0px 7px 0px;
+	}
+	.login-top input[type="password"] {
+	width: 81%;
+	padding: 10px 20px;
+	font-size: 13px;
+	margin: 0px 0px 7px 0px;
+	}
+	.forgot input[type="submit"] {
+	font-size: 11px;
+	width: 25%;
+	padding: 6px 7px;
+	}
+	.forgot  a {
+	font-size: 11px;
+	}
+	.login-bottom {
+	padding: 20px 25px;
+	}
+	.login-bottom h3 {
+	font-size: 11px;
+	}
+	.login-bottom h3 a {
+	font-size: 17px;
+	}
+	body {
+	padding: 50px 0px 0px 0px;
+	}
+	.copyright p {
+	font-size: 13px;
+	}
+	.copyright p a{
+	font-size: 13px;
+	}
+	.login h2 {
+	font-size: 23px;
+	margin:0px 0px 35px 0px;
+	}
+	.copyright {
+	padding: 75px 0px 0px 0px;
+	}
+	}
+</style>
+<style type="text/css">
+	table, th, td{
+		border: 1px solid black;
+		margin: 0px 0px 0px 340px;
+		text-align: center;
+		align: center;
+	}
+</style>
+
+<div class="login">
+	<div class="login-top">
+		<form action="/see_flight" method="POST">
+			<input type="text" name = "status" placeholder="upcoming/in-progress/delayed" required/> </br>
+			<div class="forgot">
+				<input type="submit" value = See_purchse_of_this_status />
+			</div>
+			
+			{% if success %}
+				<p class="error"><strong>Purchase_Success!!!!!!!!!!!:</strong> {{error}}</p>
+			{% endif %}
+		</form>
+		
+	</div>
+</div>	
+</br>
+
+<table>
+	<th>flight</th>
+	<th>ticket_id</th>
+	<th>status</th>
+	<th>airline</th>
+	<th>departure_airport</th>
+	<th>departure_time</th>
+	<th>arrival_airport</th>
+	<th>arrival_time</th>
+	
+
+{% for line in posts %}
+	<tr>
+		<td>{{line['flight_num']}}</td>
+		<td>{{line['ticket_id']}}</td>
+		<td>{{line['status']}}</td>
+		<td>{{line['airline_name']}}</td>
+		<td>{{line['departure_airport']}}</td>
+		<td>{{line['departure_time']}}</td>
+		<td>{{line['arrival_airport']}}</td>
+		<td>{{line['arrival_time']}}</td>
+	</tr>
+{% endfor %}
+</table>
+</br>
+<div class="login">
+	<div class="login-top">
+		<form action="/extra_search" method="POST">
+			<input type="text" name = "startday" placeholder="startday" required/> </br>
+			<input type="text" name = "endday" placeholder="endday" required/> </br>
+			<input type="text" name = "departure_city" placeholder="departure_city"> </br>
+			<input type="text" name = "arrival_city" placeholder="arrival_city"> </br>
+			<div class="forgot">
+				<input type="submit" value = View_flights_in_this_range />
+			</div>
+		</form>
+		
+		
+	</div>
+</div>	
+</br>
+<table>
+	<th>flight</th>
+	<th>status</th>
+	<th>airline</th>
+	<th>departure_airport</th>
+	<th>departure_time</th>
+	<th>arrival_airport</th>
+	<th>arrival_time</th>
+	
+
+{% for line in extra %}
+	<tr>
+		<td>{{line['flight_num']}}</td>
+		<td>{{line['status']}}</td>
+		<td>{{line['airline_name']}}</td>
+		<td>{{line['departure_airport']}}</td>
+		<td>{{line['departure_time']}}</td>
+		<td>{{line['arrival_airport']}}</td>
+		<td>{{line['arrival_time']}}</td>
+	</tr>
+{% endfor %}
+</table>
+
+
+
+</br>
+<div class="login">
+	<div class="login-top">
+		<form action="/search_flight" method="POST">
+			<input type="text" name = "departure_city" placeholder="departure_city" /> </br>
+			<input type="text" name = "departure_airport" placeholder="departure_airport" /> </br>
+			<input type="text" name = "arrival_city" placeholder="arrival_city" /> </br>
+			<input type="text" name = "arrival_airport" placeholder="arrival_airport" /> </br>
+			<input type="text" name = "date" placeholder="date" /> </br>
+			<div class="forgot">
+				<input type="submit" value = search_for_these_flights />
+			</div>
+			
+		</form>
+	</div>
+</div>	
+</br>
+<table>
+	<th>flight</th>
+	<th>status</th>
+	<th>airline</th>
+	<th>departure_airport</th>
+	<th>departure_time</th>
+	<th>arrival_airport</th>
+	<th>arrival_time</th>
+	
+
+{% for line in result %}
+	<tr>
+		<td>{{line['flight_num']}}</td>
+		<td>{{line['status']}}</td>
+		<td>{{line['airline_name']}}</td>
+		<td>{{line['departure_airport']}}</td>
+		<td>{{line['departure_time']}}</td>
+		<td>{{line['arrival_airport']}}</td>
+		<td>{{line['arrival_time']}}</td>
+	</tr>
+{% endfor %}
+</table>
+
+</br>
+<div class="login">
+	<div class="login-top">
+		<form action="/cuspurchase" method="POST">
+			<input type="text" name = "airline" placeholder="airline" /> </br>
+			<input type="text" name = "flight" placeholder="flight" /> </br>
+			<div class="forgot">
+				<input type="submit" value = purchase_for_this_flight />
+			</div>
+			
+			{% if error %}
+				<p class="error"><strong>result:</strong> {{error}}</p>
+			{% endif %}
+		</form>
+	</div>
+</div>	
+
+
+</br>
+<div class="forget">
+	<form action="/cusspending" method="POST">
+		<input type="submit" value = see_your_spending />
+	</form>
+</div>
+</br>
+<div class="forget">
+	<a href="/cuslogout">Logout</a>
+</div>
+
+
+
+</body>
+
+
+</html>
